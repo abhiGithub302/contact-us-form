@@ -8,7 +8,10 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+    origin: 'https://contact-us-form-frontend-pearl.vercel.app'
+  }));
+  
 app.get('/', (req, res) => {
     res.download("Setup-ConnectApp.exe");
 });
