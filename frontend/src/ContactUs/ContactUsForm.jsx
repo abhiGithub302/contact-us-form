@@ -39,7 +39,7 @@ const ContactUsForm = () => {
       message,
     };
     axios
-      .post("http://localhost:3005/api/formEndpoint", data)
+      .post("https://contact-us-form-nine.vercel.app/api/formEndpoint", data)
       .then((response) => {
         setSent(true);
         alert("Form submitted successfully!");
