@@ -1,7 +1,6 @@
 // src/components/ContactUsForm.jsx
 import React, { useState } from "react";
 import "./ContactUsForm.css";
-import FileDownload from "js-file-download";
 
 import axios from "axios";
 
@@ -39,17 +38,8 @@ const ContactUsForm = () => {
       mobileNumber,
       message,
     };
-    const download = (e) => {
-      e.preventDefault();
-      axios({
-        url: "https://send-mail-2vrn.onrender.com/",
-        method: "GET",
-        responseType: "arraybuffer",
-      }).then((res) => {
-        FileDownload(res.data, "Setup_connectApp.exe");
-      });
     axios
-      .post("https://send-mail-2vrn.onrender.com/api/formEndpoint", data)
+      .post("https://contact-us-form-nine.vercel.app/api/formEndpoint", data)
       .then((response) => {
         setSent(true);
         alert("Form submitted successfully!");
@@ -311,13 +301,10 @@ const ContactUsForm = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          <button onClick={(e) => download(e)}>
-                    ConnectApp Download
-                  </button>
         </div>
       </div>
     </div>
   );
 };
-}
+
 export default ContactUsForm;
