@@ -39,7 +39,7 @@ const ContactUsForm = () => {
       message,
     };
     axios
-      .post("/api/formEndpoint", data)
+      .post("http://localhost:3005/api/formEndpoint", data)
       .then((response) => {
         setSent(true);
         alert("Form submitted successfully!");
