@@ -49,6 +49,7 @@ const ContactUsForm = () => {
       .catch((error) => {
         console.error("Error downloading file:", error);
       });
+    }
   // Form Submission Handler
   const handleSubmit = (e) => {
     e.preventDefault();
