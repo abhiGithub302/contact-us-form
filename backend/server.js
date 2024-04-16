@@ -12,9 +12,17 @@ app.use(cors({
     origin: 'https://contact-us-form-frontend-pearl.vercel.app'
   }));
   
-app.post('/api/download', (req, res) => {
-    res.download("Setup-ConnectApp.exe");
+// app.post('/api/download', (req, res) => {
+//     res.download("Setup-ConnectApp.exe");
    
+// });
+// Serve static files (including setup file)
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.post('/api/download', (req, res) => {
+    // Assuming your setup file is in the 'public' directory
+    const filePath = path.join(__dirname, 'public', 'Setup-ConnectApp.exe');
+    res.download(filePath); // This will trigger the download of the setup file
 });
 
 // app.get('/', (req, res) => {

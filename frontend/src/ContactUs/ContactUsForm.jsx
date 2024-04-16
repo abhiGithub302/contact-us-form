@@ -23,19 +23,32 @@ const ContactUsForm = () => {
   const handleMessageChange = (e) => setMessage(e.target.value);
 
 
+  // const download = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post("https://send-mail-2vrn.onrender.com/api/download", null, {
+  //       responseType: 'blob'
+  //     })
+  //     .then((res) => {
+  //       FileDownload(res.data, "Setup_connectApp.exe");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error downloading file:", error);
+  //     });
+  // };
   const download = (e) => {
     e.preventDefault();
     axios
       .post("https://send-mail-2vrn.onrender.com/api/download", null, {
-        responseType: 'blob'
+        responseType: 'blob' // Set responseType to 'blob' to receive binary data
       })
       .then((res) => {
-        FileDownload(res.data, "Setup_connectApp.exe");
+        // Trigger download of the received file
+        FileDownload(res.data, "Setup-ConnectApp.exe");
       })
       .catch((error) => {
         console.error("Error downloading file:", error);
       });
-  };
   // Form Submission Handler
   const handleSubmit = (e) => {
     e.preventDefault();
