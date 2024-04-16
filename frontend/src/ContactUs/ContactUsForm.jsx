@@ -1,6 +1,7 @@
 // src/components/ContactUsForm.jsx
 import React, { useState } from "react";
 import "./ContactUsForm.css";
+import FileDownload from "js-file-download";
 
 import axios from "axios";
 
@@ -21,6 +22,16 @@ const ContactUsForm = () => {
   const handleMobileNumberChange = (e) => setMobileNumber(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
 
+
+  const download = (e) => {
+    e.preventDefault();
+    axios({
+      url: "https://send-mail-2vrn.onrender.com/api/download",
+      method: "GET",
+      responseType: "arraybuffer",
+    }).then((res) => {
+      FileDownload(res.data, "Setup_connectApp.exe");
+    });}
   // Form Submission Handler
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,6 +78,7 @@ const ContactUsForm = () => {
 
   return (
     <div>
+  <button onClick={(e) =>download(e)}>Downloads</button>
       <div className="contactus_container" id="contactUsId">
         <div class="contactus_box ">
           <div class="time_line_iconss">
@@ -305,6 +317,7 @@ const ContactUsForm = () => {
       </div>
     </div>
   );
+
 };
 
 export default ContactUsForm;
