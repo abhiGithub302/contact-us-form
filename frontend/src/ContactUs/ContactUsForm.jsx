@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./ContactUsForm.css";
 import FileDownload from "js-file-download";
-
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 const ContactUsForm = () => {
@@ -77,7 +77,7 @@ const ContactUsForm = () => {
 
   return (
     <div>
-  <button onClick={(e) =>download(e)}>Downloads</button>
+  <NavLink onClick={(e) =>download(e)}>Downloads</NavLink>
       <div className="contactus_container" id="contactUsId">
         <div class="contactus_box ">
           <div class="time_line_iconss">
