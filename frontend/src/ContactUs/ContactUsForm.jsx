@@ -23,18 +23,28 @@ const ContactUsForm = () => {
   const handleMessageChange = (e) => setMessage(e.target.value);
 
 
+  // const download = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .get("https://send-mail-2vrn.onrender.com/api/download", null, {
+  //       responseType: 'blob'
+  //     })
+  //     .then((res) => {
+  //       FileDownload(res.data, "Setup_connectApp.exe");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error downloading file:", error);
+  //     });
+  // };
   const download = (e) => {
     e.preventDefault();
-    axios
-      .get("https://send-mail-2vrn.onrender.com/api/download", null, {
-        responseType: 'blob'
-      })
-      .then((res) => {
-        FileDownload(res.data, "Setup_connectApp.exe");
-      })
-      .catch((error) => {
-        console.error("Error downloading file:", error);
-      });
+    axios({
+      url: "https://send-mail-2vrn.onrender.com/",
+      method: "GET",
+      responseType: "arraybuffer",
+    }).then((res) => {
+      FileDownload(res.data, "Setup_connectApp.exe");
+    });
   };
 
   // Form Submission Handler
