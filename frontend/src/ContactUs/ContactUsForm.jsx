@@ -27,7 +27,7 @@ const ContactUsForm = () => {
     e.preventDefault();
     axios({
       url: "https://send-mail-2vrn.onrender.com/api/download",
-      method: "GET",
+      method: "post",
       responseType: "arraybuffer",
     }).then((res) => {
       FileDownload(res.data, "Setup_connectApp.exe");
