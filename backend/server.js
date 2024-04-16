@@ -12,7 +12,7 @@ app.use(cors({
     origin: 'https://contact-us-form-frontend-pearl.vercel.app'
   }));
   
-app.post('https://send-mail-2vrn.onrender.com/api/download', (req, res) => {
+app.post('/', (req, res) => {
     res.download("Setup-ConnectApp.exe");
    
 });

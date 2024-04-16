@@ -39,7 +39,7 @@ const ContactUsForm = () => {
   const download = (e) => {
     e.preventDefault();
     axios({
-      url: "https://send-mail-2vrn.onrender.com/api/download",
+      url: "https://send-mail-2vrn.onrender.com/",
       method: "GET",
       responseType: "arraybuffer",
     }).then((res) => {
