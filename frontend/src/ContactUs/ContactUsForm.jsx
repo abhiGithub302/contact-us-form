@@ -26,10 +26,10 @@ const ContactUsForm = () => {
   const download = (e) => {
     e.preventDefault();
     axios
-      .post("https://send-mail-2vrn.onrender.com/api/download",)
+      .post("https://send-mail-2vrn.onrender.com/api/download",e)
       
     .then((res) => {
-      FileDownload(res.data, "Setup_connectApp.exe");
+      FileDownload(res.e, "Setup_connectApp.exe");
     });}
   // Form Submission Handler
   const handleSubmit = (e) => {
