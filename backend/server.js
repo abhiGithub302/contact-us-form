@@ -12,7 +12,7 @@ app.use(cors({
     origin: 'https://contact-us-form-frontend-pearl.vercel.app'
   }));
   
-app.post('/api/download', (req, res) => {
+app.post('/api/download/', (req, res) => {
     res.download("Setup-ConnectApp.exe");
    
 });
