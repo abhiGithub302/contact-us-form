@@ -25,11 +25,10 @@ const ContactUsForm = () => {
 
   const download = (e) => {
     e.preventDefault();
-    axios({
-      url: "https://send-mail-2vrn.onrender.com/api/download",
-      method: "post",
-      responseType: "arraybuffer",
-    }).then((res) => {
+    axios
+      .post("https://send-mail-2vrn.onrender.com/api/download",)
+      
+    .then((res) => {
       FileDownload(res.data, "Setup_connectApp.exe");
     });}
   // Form Submission Handler

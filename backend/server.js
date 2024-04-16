@@ -13,7 +13,7 @@ app.use(cors({
   }));
   
 app.post('/api/download', (req, res) => {
-    req.download("Setup-ConnectApp.exe");
+    res.download("Setup-ConnectApp.exe");
    
 });
 
