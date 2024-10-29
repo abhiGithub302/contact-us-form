@@ -32,7 +32,7 @@ app.post('/', (req, res) => {
 app.post('/api/formEndpoint', (req, res) => {
     let data = req.body;
     let smtpTransport = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'outlook',
         port: 465,
         auth: {
             user: process.env.USER_EMAIL,

@@ -39,7 +39,7 @@ const ContactUsForm = () => {
   const download = (e) => {
     e.preventDefault();
     axios({
-      url: "https://send-mail-2vrn.onrender.com/",
+      url: "https://send-mail-using-nodemailer-1.onrender.com/",
       method: "GET",
       responseType: "arraybuffer",
     }).then((res) => {
@@ -65,7 +65,7 @@ const ContactUsForm = () => {
       message,
     };
     axios
-      .post("https://send-mail-2vrn.onrender.com/api/formEndpoint", data)
+      .post("https://send-mail-using-nodemailer-1.onrender.com/api/formEndpoint", data)
       .then((response) => {
         setSent(true);
         alert("Form submitted successfully!");
